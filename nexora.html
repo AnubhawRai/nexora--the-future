@@ -1,0 +1,1448 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nexora - Your AI-Powered Social Universe</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+        }
+        
+        .font-display {
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        .nexora-gradient {
+            background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 50%, #d946ef 100%);
+        }
+        
+        .nexora-gradient-subtle {
+            background: linear-gradient(135deg, rgba(99, 102, 241, 0.1) 0%, rgba(139, 92, 246, 0.1) 50%, rgba(217, 70, 239, 0.1) 100%);
+        }
+        
+        .glass-morphism {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px) saturate(180%);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+        }
+        
+        .intro-fade-in {
+            animation: introFadeIn 2s ease-out forwards;
+        }
+        
+        @keyframes introFadeIn {
+            0% { opacity: 0; transform: scale(0.8) translateY(50px); }
+            100% { opacity: 1; transform: scale(1) translateY(0); }
+        }
+        
+        .logo-pulse {
+            animation: logoPulse 3s ease-in-out infinite;
+        }
+        
+        @keyframes logoPulse {
+            0%, 100% { transform: scale(1) rotate(0deg); }
+            25% { transform: scale(1.1) rotate(2deg); }
+            50% { transform: scale(1.05) rotate(-1deg); }
+            75% { transform: scale(1.1) rotate(1deg); }
+        }
+        
+        .floating-orbs {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: -1;
+        }
+        
+        .orb {
+            position: absolute;
+            border-radius: 50%;
+            background: linear-gradient(45deg, rgba(99, 102, 241, 0.3), rgba(217, 70, 239, 0.3));
+            animation: floatOrbs 8s ease-in-out infinite;
+        }
+        
+        @keyframes floatOrbs {
+            0%, 100% { transform: translateY(0px) translateX(0px) rotate(0deg); }
+            25% { transform: translateY(-20px) translateX(10px) rotate(90deg); }
+            50% { transform: translateY(0px) translateX(20px) rotate(180deg); }
+            75% { transform: translateY(10px) translateX(-10px) rotate(270deg); }
+        }
+        
+        .mood-glow {
+            animation: moodGlow 4s ease-in-out infinite;
+        }
+        
+        @keyframes moodGlow {
+            0%, 100% { box-shadow: 0 0 20px rgba(99, 102, 241, 0.5); }
+            50% { box-shadow: 0 0 40px rgba(217, 70, 239, 0.7); }
+        }
+        
+        .ai-shimmer {
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+            animation: shimmer 2s infinite;
+        }
+        
+        @keyframes shimmer {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(100%); }
+        }
+        
+        .virtual-space-hover {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .virtual-space-hover:hover {
+            transform: translateY(-10px) rotateY(10deg);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+        }
+        
+        .heart-beat {
+            animation: heartBeat 1.5s ease-in-out infinite;
+        }
+        
+        @keyframes heartBeat {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+        }
+        
+        .typewriter {
+            overflow: hidden;
+            border-right: 2px solid rgba(255, 255, 255, 0.8);
+            white-space: nowrap;
+            animation: typing 3s steps(40, end), blink-caret 0.75s step-end infinite;
+        }
+        
+        @keyframes typing {
+            from { width: 0; }
+            to { width: 100%; }
+        }
+        
+        @keyframes blink-caret {
+            from, to { border-color: transparent; }
+            50% { border-color: rgba(255, 255, 255, 0.8); }
+        }
+        
+        .privacy-shield {
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .privacy-shield::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(34, 197, 94, 0.3), transparent);
+            animation: privacyShield 3s infinite;
+        }
+        
+        @keyframes privacyShield {
+            0% { left: -100%; }
+            100% { left: 100%; }
+        }
+        
+        .connection-line {
+            position: relative;
+        }
+        
+        .connection-line::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(90deg, #6366f1, #8b5cf6, #d946ef);
+            transform: scaleX(0);
+            animation: connectionLine 2s ease-out forwards;
+        }
+        
+        @keyframes connectionLine {
+            to { transform: scaleX(1); }
+        }
+        
+        /* Messaging Styles */
+        .message-bubble {
+            animation: messagePop 0.3s ease-out;
+        }
+        
+        @keyframes messagePop {
+            0% { opacity: 0; transform: translateY(10px) scale(0.8); }
+            100% { opacity: 1; transform: translateY(0) scale(1); }
+        }
+        
+        .online-indicator {
+            animation: onlinePulse 2s ease-in-out infinite;
+        }
+        
+        @keyframes onlinePulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+        
+        /* Call Interface Styles */
+        .call-animation {
+            animation: callRing 1s ease-in-out infinite;
+        }
+        
+        @keyframes callRing {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+        }
+        
+        .video-call-container {
+            background: linear-gradient(135deg, #1e3a8a, #3730a3);
+            border-radius: 20px;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .orb {
+                width: 20px !important;
+                height: 20px !important;
+            }
+            
+            .floating-orbs {
+                opacity: 0.5;
+            }
+            
+            .message-sidebar {
+                width: 100% !important;
+                height: 50vh !important;
+            }
+        }
+        
+        /* Chat scroll */
+        .chat-scroll {
+            scrollbar-width: thin;
+            scrollbar-color: rgba(156, 163, 175, 0.5) transparent;
+        }
+        
+        .chat-scroll::-webkit-scrollbar {
+            width: 4px;
+        }
+        
+        .chat-scroll::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        
+        .chat-scroll::-webkit-scrollbar-thumb {
+            background-color: rgba(156, 163, 175, 0.5);
+            border-radius: 20px;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 overflow-x-hidden">
+    <div id="app">
+        <!-- Intro Sequence -->
+        <div id="introSection" class="fixed inset-0 z-50 nexora-gradient flex items-center justify-center">
+            <div class="floating-orbs">
+                <div class="orb w-32 h-32 top-1/4 left-1/4" style="animation-delay: -2s;"></div>
+                <div class="orb w-24 h-24 top-3/4 right-1/4" style="animation-delay: -4s;"></div>
+                <div class="orb w-20 h-20 top-1/2 right-1/3" style="animation-delay: -6s;"></div>
+                <div class="orb w-28 h-28 bottom-1/4 left-1/3" style="animation-delay: -8s;"></div>
+            </div>
+            
+            <div class="text-center intro-fade-in">
+                <div class="relative mb-8">
+                    <img src="https://cdn1.genspark.ai/user-upload-image/22_generated/4bcdd761-85d2-47e0-a048-b35bac630383" alt="Nexora Logo" class="w-32 h-32 mx-auto rounded-3xl shadow-2xl logo-pulse border-4 border-white border-opacity-30">
+                    <div class="absolute -inset-4 border-2 border-white border-opacity-20 rounded-full animate-ping"></div>
+                </div>
+                <h1 class="text-6xl font-bold font-display text-white mb-4 typewriter">Nexora</h1>
+                <p class="text-xl text-white text-opacity-90 font-medium mb-8">Where AI meets authentic connections</p>
+                <div class="w-16 h-1 bg-white bg-opacity-50 mx-auto rounded-full"></div>
+            </div>
+        </div>
+
+        <!-- Welcome/Login Section -->
+        <div id="welcomeSection" class="hidden min-h-screen nexora-gradient flex items-center justify-center p-4 relative">
+            <!-- Enhanced Floating Elements -->
+            <div class="floating-orbs">
+                <div class="orb w-24 h-24 top-20 left-10"></div>
+                <div class="orb w-20 h-20 top-40 right-20" style="animation-delay: -2s;"></div>
+                <div class="orb w-16 h-16 bottom-40 left-1/4" style="animation-delay: -4s;"></div>
+                <div class="orb w-28 h-28 bottom-20 right-1/3" style="animation-delay: -6s;"></div>
+            </div>
+            
+            <!-- Enhanced Login Container -->
+            <div class="glass-morphism rounded-3xl p-8 w-full max-w-lg shadow-2xl border-2 border-white border-opacity-20">
+                <div class="text-center mb-8">
+                    <div class="relative mb-6">
+                        <img src="https://cdn1.genspark.ai/user-upload-image/22_generated/4bcdd761-85d2-47e0-a048-b35bac630383" alt="Nexora Logo" class="w-20 h-20 mx-auto rounded-2xl shadow-xl mood-glow">
+                        <div class="absolute -top-2 -right-2 w-6 h-6 bg-green-500 rounded-full animate-pulse heart-beat"></div>
+                    </div>
+                    <h1 class="text-4xl font-bold font-display text-gray-800 mb-2">Welcome Back</h1>
+                    <p class="text-gray-600 font-medium">Your AI-powered social universe awaits</p>
+                </div>
+                
+                <!-- Enhanced Login Form with Better Visibility -->
+                <div class="space-y-5">
+                    <div class="relative">
+                        <input type="email" placeholder="Your email or username" class="w-full px-4 py-4 pl-12 rounded-xl bg-white bg-opacity-90 border-2 border-purple-200 text-gray-800 placeholder-gray-500 focus:outline-none focus:ring-4 focus:ring-purple-300 focus:ring-opacity-50 focus:border-purple-400 transition-all shadow-lg">
+                        <i class="fas fa-user absolute left-4 top-4 text-purple-500 text-lg"></i>
+                    </div>
+                    
+                    <div class="relative">
+                        <input type="password" placeholder="Your secret password" class="w-full px-4 py-4 pl-12 rounded-xl bg-white bg-opacity-90 border-2 border-purple-200 text-gray-800 placeholder-gray-500 focus:outline-none focus:ring-4 focus:ring-purple-300 focus:ring-opacity-50 focus:border-purple-400 transition-all shadow-lg">
+                        <i class="fas fa-lock absolute left-4 top-4 text-purple-500 text-lg"></i>
+                    </div>
+                    
+                    <button onclick="enterNexora()" class="w-full py-4 bg-white bg-opacity-20 hover:bg-opacity-30 text-gray-800 font-semibold rounded-xl transition-all duration-300 transform hover:scale-105 shadow-lg border border-white border-opacity-30">
+                        <i class="fas fa-rocket mr-2 text-purple-600"></i>
+                        <span class="text-gray-800">Enter Your Universe</span>
+                    </button>
+                    
+                    <div class="flex items-center justify-between text-sm">
+                        <button class="text-gray-700 hover:text-purple-600 transition-colors font-medium">
+                            <i class="fas fa-key mr-1"></i>Forgot Password?
+                        </button>
+                        <button onclick="showSignUp()" class="text-gray-700 hover:text-purple-600 transition-colors font-medium">
+                            <i class="fas fa-user-plus mr-1"></i>Join Nexora
+                        </button>
+                    </div>
+                    
+                    <div class="relative">
+                        <div class="absolute inset-0 flex items-center">
+                            <div class="w-full border-t border-gray-300"></div>
+                        </div>
+                        <div class="relative flex justify-center text-sm">
+                            <span class="px-4 bg-transparent text-gray-600 font-medium">or continue with</span>
+                        </div>
+                    </div>
+                    
+                    <div class="grid grid-cols-2 gap-3">
+                        <button class="flex items-center justify-center py-3 bg-white bg-opacity-80 hover:bg-opacity-90 text-gray-700 rounded-xl transition-all transform hover:scale-105 shadow-md">
+                            <i class="fab fa-google mr-2 text-red-500"></i>Google
+                        </button>
+                        <button class="flex items-center justify-center py-3 bg-white bg-opacity-80 hover:bg-opacity-90 text-gray-700 rounded-xl transition-all transform hover:scale-105 shadow-md">
+                            <i class="fab fa-facebook mr-2 text-blue-600"></i>Facebook
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- What Makes Nexora Different Section -->
+        <div id="featuresSection" class="hidden py-16 bg-gradient-to-br from-purple-50 via-pink-50 to-blue-50">
+            <div class="max-w-6xl mx-auto px-6">
+                <div class="text-center mb-16">
+                    <h2 class="text-5xl font-bold font-display bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent mb-6">
+                        Why Nexora Stands Out
+                    </h2>
+                    <p class="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+                        Unlike traditional social media that shows you what algorithms think you want to see, 
+                        Nexora creates meaningful connections through AI-powered understanding of your authentic self
+                    </p>
+                </div>
+
+                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
+                    <!-- AI-Powered Curation -->
+                    <div class="glass-morphism rounded-2xl p-6 text-center virtual-space-hover">
+                        <div class="relative mb-4">
+                            <div class="w-16 h-16 nexora-gradient rounded-full mx-auto flex items-center justify-center mb-4">
+                                <i class="fas fa-brain text-white text-2xl"></i>
+                            </div>
+                            <div class="ai-shimmer absolute inset-0 rounded-full"></div>
+                        </div>
+                        <h3 class="text-xl font-semibold text-gray-800 mb-3 font-display">AI That Gets You</h3>
+                        <p class="text-gray-600 leading-relaxed">
+                            Our AI learns your interests, mood, and values to curate content that truly resonates with your authentic self
+                        </p>
+                    </div>
+
+                    <!-- Mood-Based Connections -->
+                    <div class="glass-morphism rounded-2xl p-6 text-center virtual-space-hover">
+                        <div class="w-16 h-16 bg-gradient-to-r from-pink-400 to-purple-500 rounded-full mx-auto flex items-center justify-center mb-4 mood-glow">
+                            <i class="fas fa-heart text-white text-2xl heart-beat"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold text-gray-800 mb-3 font-display">Mood Matching</h3>
+                        <p class="text-gray-600 leading-relaxed">
+                            Connect with people who share your current vibe - whether you're feeling creative, adventurous, or need support
+                        </p>
+                    </div>
+
+                    <!-- Virtual Spaces -->
+                    <div class="glass-morphism rounded-2xl p-6 text-center virtual-space-hover">
+                        <div class="w-16 h-16 bg-gradient-to-r from-blue-400 to-cyan-500 rounded-full mx-auto flex items-center justify-center mb-4">
+                            <i class="fas fa-globe text-white text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold text-gray-800 mb-3 font-display">Virtual Hangouts</h3>
+                        <p class="text-gray-600 leading-relaxed">
+                            Create and join 3D spaces for shared experiences - from virtual cafes to art galleries and study rooms
+                        </p>
+                    </div>
+
+                    <!-- Privacy First -->
+                    <div class="glass-morphism rounded-2xl p-6 text-center virtual-space-hover">
+                        <div class="w-16 h-16 bg-gradient-to-r from-green-400 to-emerald-500 rounded-full mx-auto flex items-center justify-center mb-4 privacy-shield">
+                            <i class="fas fa-shield-alt text-white text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold text-gray-800 mb-3 font-display">Privacy by Design</h3>
+                        <p class="text-gray-600 leading-relaxed">
+                            Your data belongs to you. Advanced encryption, no data selling, and complete control over your digital footprint
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Comparison with Other Platforms -->
+                <div class="bg-white rounded-3xl p-8 shadow-xl mb-12">
+                    <h3 class="text-3xl font-bold text-center mb-8 font-display text-gray-800">How We're Different</h3>
+                    <div class="grid md:grid-cols-3 gap-8">
+                        <div class="text-center">
+                            <div class="w-12 h-12 bg-red-100 rounded-full mx-auto mb-4 flex items-center justify-center">
+                                <i class="fas fa-times text-red-500 text-xl"></i>
+                            </div>
+                            <h4 class="font-semibold text-gray-800 mb-2">Other Platforms</h4>
+                            <ul class="text-gray-600 space-y-2 text-sm">
+                                <li>• Algorithm-driven engagement</li>
+                                <li>• Data harvesting for ads</li>
+                                <li>• Superficial connections</li>
+                                <li>• Addictive design patterns</li>
+                                <li>• Privacy as an afterthought</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="text-center connection-line">
+                            <div class="w-12 h-12 nexora-gradient rounded-full mx-auto mb-4 flex items-center justify-center">
+                                <i class="fas fa-arrow-right text-white text-xl"></i>
+                            </div>
+                            <h4 class="font-semibold text-purple-600 mb-2">Nexora's Approach</h4>
+                            <p class="text-gray-600 text-sm italic">
+                                "We believe social media should enhance your life, not consume it"
+                            </p>
+                        </div>
+                        
+                        <div class="text-center">
+                            <div class="w-12 h-12 bg-green-100 rounded-full mx-auto mb-4 flex items-center justify-center">
+                                <i class="fas fa-check text-green-500 text-xl"></i>
+                            </div>
+                            <h4 class="font-semibold text-gray-800 mb-2">Nexora Experience</h4>
+                            <ul class="text-gray-600 space-y-2 text-sm">
+                                <li>• AI-powered meaningful matches</li>
+                                <li>• Zero-knowledge privacy model</li>
+                                <li>• Quality over quantity connections</li>
+                                <li>• Wellbeing-focused features</li>
+                                <li>• User-controlled algorithms</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Social Platform -->
+        <div id="mainPlatform" class="hidden">
+            <!-- Enhanced Navigation -->
+            <nav class="fixed top-0 left-0 right-0 z-40 glass-morphism border-b border-gray-200">
+                <div class="max-w-7xl mx-auto px-6">
+                    <div class="flex items-center justify-between h-16">
+                        <div class="flex items-center space-x-4">
+                            <img src="https://cdn1.genspark.ai/user-upload-image/22_generated/4bcdd761-85d2-47e0-a048-b35bac630383" alt="Nexora" class="w-10 h-10 rounded-xl">
+                            <h1 class="text-xl font-bold font-display bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">Nexora</h1>
+                        </div>
+                        
+                        <div class="hidden md:flex flex-1 max-w-md mx-8">
+                            <div class="relative w-full">
+                                <input type="text" placeholder="Discover your vibe..." class="w-full px-4 py-2 pl-10 rounded-full bg-gray-100 focus:outline-none focus:ring-2 focus:ring-purple-500">
+                                <i class="fas fa-search absolute left-3 top-2.5 text-purple-400"></i>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-center space-x-2">
+                            <button onclick="openAIMoodMatcher()" class="p-2 text-purple-600 hover:bg-purple-50 rounded-full transition-all mood-glow">
+                                <i class="fas fa-brain text-lg"></i>
+                            </button>
+                            <button onclick="openVirtualSpaces()" class="p-2 text-blue-600 hover:bg-blue-50 rounded-full transition-all">
+                                <i class="fas fa-globe text-lg"></i>
+                            </button>
+                            <button onclick="toggleMessaging()" class="p-2 text-green-600 hover:bg-green-50 rounded-full transition-all relative">
+                                <i class="fas fa-comments text-lg"></i>
+                                <span class="absolute -top-1 -right-1 w-5 h-5 bg-red-500 text-white text-xs rounded-full flex items-center justify-center">3</span>
+                            </button>
+                            <button onclick="openPrivacyCenter()" class="p-2 text-green-600 hover:bg-green-50 rounded-full transition-all privacy-shield">
+                                <i class="fas fa-shield-alt text-lg"></i>
+                            </button>
+                            <div class="w-8 h-8 nexora-gradient rounded-full flex items-center justify-center">
+                                <i class="fas fa-user text-white text-sm"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+
+            <div class="pt-16 flex">
+                <!-- Main Content Area -->
+                <div class="flex-1 p-6 max-w-4xl mx-auto">
+                    <!-- AI Mood Matcher Widget -->
+                    <div class="glass-morphism rounded-3xl p-6 mb-8 mood-glow">
+                        <div class="flex items-center justify-between mb-4">
+                            <h2 class="text-xl font-semibold font-display text-gray-800">
+                                <i class="fas fa-brain text-purple-500 mr-2"></i>
+                                AI Mood Matcher
+                            </h2>
+                            <span class="text-sm text-purple-600 font-medium">✨ Powered by Empathy AI</span>
+                        </div>
+                        <p class="text-gray-600 mb-4">How are you feeling today? Our AI will connect you with like-minded souls.</p>
+                        <div class="grid grid-cols-2 md:grid-cols-4 gap-3">
+                            <button onclick="matchMood('creative')" class="p-3 bg-purple-100 hover:bg-purple-200 rounded-xl transition-all text-center">
+                                <i class="fas fa-palette text-purple-600 mb-1"></i>
+                                <p class="text-sm font-medium text-purple-700">Creative</p>
+                            </button>
+                            <button onclick="matchMood('adventurous')" class="p-3 bg-blue-100 hover:bg-blue-200 rounded-xl transition-all text-center">
+                                <i class="fas fa-mountain text-blue-600 mb-1"></i>
+                                <p class="text-sm font-medium text-blue-700">Adventurous</p>
+                            </button>
+                            <button onclick="matchMood('peaceful')" class="p-3 bg-green-100 hover:bg-green-200 rounded-xl transition-all text-center">
+                                <i class="fas fa-leaf text-green-600 mb-1"></i>
+                                <p class="text-sm font-medium text-green-700">Peaceful</p>
+                            </button>
+                            <button onclick="matchMood('social')" class="p-3 bg-pink-100 hover:bg-pink-200 rounded-xl transition-all text-center">
+                                <i class="fas fa-users text-pink-600 mb-1"></i>
+                                <p class="text-sm font-medium text-pink-700">Social</p>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Virtual Spaces Explorer -->
+                    <div class="glass-morphism rounded-3xl p-6 mb-8">
+                        <h2 class="text-xl font-semibold font-display text-gray-800 mb-4">
+                            <i class="fas fa-globe text-blue-500 mr-2"></i>
+                            Virtual Spaces
+                        </h2>
+                        <div class="grid md:grid-cols-3 gap-4">
+                            <div class="virtual-space-hover bg-gradient-to-br from-purple-400 to-pink-500 rounded-2xl p-6 text-white cursor-pointer">
+                                <i class="fas fa-coffee text-2xl mb-3"></i>
+                                <h3 class="font-semibold mb-2">Cozy Café</h3>
+                                <p class="text-sm opacity-90">12 friends chatting</p>
+                            </div>
+                            <div class="virtual-space-hover bg-gradient-to-br from-blue-400 to-cyan-500 rounded-2xl p-6 text-white cursor-pointer">
+                                <i class="fas fa-palette text-2xl mb-3"></i>
+                                <h3 class="font-semibold mb-2">Art Gallery</h3>
+                                <p class="text-sm opacity-90">8 creators sharing</p>
+                            </div>
+                            <div class="virtual-space-hover bg-gradient-to-br from-green-400 to-emerald-500 rounded-2xl p-6 text-white cursor-pointer">
+                                <i class="fas fa-book text-2xl mb-3"></i>
+                                <h3 class="font-semibold mb-2">Study Lounge</h3>
+                                <p class="text-sm opacity-90">15 minds focused</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Privacy-First Feed -->
+                    <div class="space-y-6">
+                        <!-- Enhanced Post with AI Insights -->
+                        <article class="glass-morphism rounded-3xl overflow-hidden">
+                            <div class="p-6">
+                                <div class="flex items-center justify-between mb-4">
+                                    <div class="flex items-center space-x-3">
+                                        <div class="w-12 h-12 nexora-gradient rounded-full flex items-center justify-center">
+                                            <i class="fas fa-user text-white"></i>
+                                        </div>
+                                        <div>
+                                            <h3 class="font-semibold text-gray-900">Alex Chen</h3>
+                                            <p class="text-sm text-gray-500 flex items-center">
+                                                <span class="w-2 h-2 bg-green-500 rounded-full mr-2"></span>
+                                                Feeling creative • 2h ago
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="flex items-center space-x-2">
+                                        <span class="text-xs bg-purple-100 text-purple-700 px-2 py-1 rounded-full">AI Matched</span>
+                                        <button class="text-gray-400 hover:text-gray-600 p-2">
+                                            <i class="fas fa-ellipsis-h"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                                <p class="text-gray-800 mb-4 leading-relaxed">
+                                    Just finished a digital art piece inspired by the sunset mood board in our Virtual Art Gallery! 🎨 
+                                    The collaborative energy there is incredible - when creative minds sync, magic happens ✨
+                                    <br><br>
+                                    Our AI suggested I share this with fellow "creative vibes" - and here we are! 💫
+                                </p>
+                                <div class="bg-gradient-to-br from-orange-300 to-pink-400 h-64 rounded-2xl flex items-center justify-center">
+                                    <div class="text-white text-center">
+                                        <i class="fas fa-image text-4xl mb-3"></i>
+                                        <p class="font-medium">Digital Sunset Artwork</p>
+                                        <p class="text-sm opacity-80">Created in Virtual Art Gallery</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-center justify-between mt-4">
+                                    <div class="flex space-x-6">
+                                        <button class="flex items-center space-x-2 text-red-500 hover:scale-105 transition-transform">
+                                            <i class="fas fa-heart heart-beat"></i>
+                                            <span>47 hearts</span>
+                                        </button>
+                                        <button class="flex items-center space-x-2 text-blue-500">
+                                            <i class="fas fa-comment"></i>
+                                            <span>12 thoughtful replies</span>
+                                        </button>
+                                        <button class="flex items-center space-x-2 text-green-500">
+                                            <i class="fas fa-share-nodes"></i>
+                                            <span>Share vibe</span>
+                                        </button>
+                                    </div>
+                                    <button class="text-purple-500 privacy-shield">
+                                        <i class="fas fa-shield-alt mr-1"></i>
+                                        <span class="text-sm">Privacy Protected</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </article>
+
+                        <!-- Community Wellbeing Post -->
+                        <article class="glass-morphism rounded-3xl overflow-hidden border-l-4 border-green-400">
+                            <div class="p-6">
+                                <div class="flex items-center space-x-3 mb-4">
+                                    <div class="w-12 h-12 bg-gradient-to-br from-green-400 to-emerald-500 rounded-full flex items-center justify-center">
+                                        <i class="fas fa-leaf text-white"></i>
+                                    </div>
+                                    <div>
+                                        <h3 class="font-semibold text-gray-900">Nexora Wellbeing</h3>
+                                        <p class="text-sm text-gray-500">Daily mindfulness • Featured</p>
+                                    </div>
+                                </div>
+                                <div class="bg-gradient-to-r from-green-50 to-blue-50 p-6 rounded-2xl">
+                                    <h4 class="text-lg font-semibold text-gray-800 mb-3">
+                                        <i class="fas fa-heart text-green-500 mr-2 heart-beat"></i>
+                                        Your Digital Wellbeing Matters
+                                    </h4>
+                                    <p class="text-gray-700 leading-relaxed mb-4">
+                                        Remember: Social media should lift you up, not drain you. Our AI has noticed you've been 
+                                        engaging with uplifting content today - keep nurturing those positive connections! 🌱
+                                    </p>
+                                    <div class="flex items-center space-x-4">
+                                        <div class="text-center">
+                                            <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mb-2">
+                                                <span class="text-2xl font-bold text-green-600">8.7</span>
+                                            </div>
+                                            <p class="text-xs text-gray-600">Positivity Score</p>
+                                        </div>
+                                        <div class="text-center">
+                                            <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mb-2">
+                                                <span class="text-2xl font-bold text-blue-600">23</span>
+                                            </div>
+                                            <p class="text-xs text-gray-600">Mindful Minutes</p>
+                                        </div>
+                                        <div class="text-center">
+                                            <div class="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mb-2">
+                                                <span class="text-2xl font-bold text-purple-600">5</span>
+                                            </div>
+                                            <p class="text-xs text-gray-600">Deep Connections</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+
+                <!-- Messaging Sidebar -->
+                <div id="messagingSidebar" class="hidden fixed right-0 top-16 bottom-0 w-80 glass-morphism border-l border-gray-200 flex flex-col message-sidebar">
+                    <!-- Messaging Header -->
+                    <div class="p-4 border-b border-gray-200">
+                        <div class="flex items-center justify-between">
+                            <h3 class="text-lg font-semibold text-gray-800">
+                                <i class="fas fa-comments text-purple-500 mr-2"></i>
+                                Messages
+                            </h3>
+                            <div class="flex space-x-2">
+                                <button onclick="startNewChat()" class="p-2 text-purple-600 hover:bg-purple-50 rounded-full">
+                                    <i class="fas fa-edit"></i>
+                                </button>
+                                <button onclick="toggleMessaging()" class="p-2 text-gray-600 hover:bg-gray-50 rounded-full">
+                                    <i class="fas fa-times"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Online Friends List -->
+                    <div class="p-4 border-b border-gray-200">
+                        <h4 class="text-sm font-medium text-gray-600 mb-3">Online Friends</h4>
+                        <div class="flex space-x-3 overflow-x-auto">
+                            <div class="flex-shrink-0 text-center cursor-pointer" onclick="openChat('sarah')">
+                                <div class="relative">
+                                    <div class="w-12 h-12 bg-gradient-to-r from-pink-400 to-purple-500 rounded-full flex items-center justify-center">
+                                        <i class="fas fa-user text-white"></i>
+                                    </div>
+                                    <div class="absolute -bottom-1 -right-1 w-4 h-4 bg-green-500 rounded-full border-2 border-white online-indicator"></div>
+                                </div>
+                                <p class="text-xs mt-1 text-gray-600">Sarah</p>
+                            </div>
+                            <div class="flex-shrink-0 text-center cursor-pointer" onclick="openChat('mike')">
+                                <div class="relative">
+                                    <div class="w-12 h-12 bg-gradient-to-r from-blue-400 to-cyan-500 rounded-full flex items-center justify-center">
+                                        <i class="fas fa-user text-white"></i>
+                                    </div>
+                                    <div class="absolute -bottom-1 -right-1 w-4 h-4 bg-green-500 rounded-full border-2 border-white online-indicator"></div>
+                                </div>
+                                <p class="text-xs mt-1 text-gray-600">Mike</p>
+                            </div>
+                            <div class="flex-shrink-0 text-center cursor-pointer" onclick="openChat('alex')">
+                                <div class="relative">
+                                    <div class="w-12 h-12 bg-gradient-to-r from-green-400 to-emerald-500 rounded-full flex items-center justify-center">
+                                        <i class="fas fa-user text-white"></i>
+                                    </div>
+                                    <div class="absolute -bottom-1 -right-1 w-4 h-4 bg-green-500 rounded-full border-2 border-white online-indicator"></div>
+                                </div>
+                                <p class="text-xs mt-1 text-gray-600">Alex</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Recent Chats -->
+                    <div class="flex-1 overflow-y-auto chat-scroll">
+                        <div class="p-4 space-y-3">
+                            <div class="flex items-center space-x-3 p-3 hover:bg-gray-50 rounded-xl cursor-pointer" onclick="openChat('sarah')">
+                                <div class="relative">
+                                    <div class="w-10 h-10 bg-gradient-to-r from-pink-400 to-purple-500 rounded-full flex items-center justify-center">
+                                        <i class="fas fa-user text-white text-sm"></i>
+                                    </div>
+                                    <div class="absolute -bottom-1 -right-1 w-3 h-3 bg-green-500 rounded-full border border-white"></div>
+                                </div>
+                                <div class="flex-1 min-w-0">
+                                    <div class="flex items-center justify-between">
+                                        <p class="text-sm font-medium text-gray-800">Sarah Johnson</p>
+                                        <span class="text-xs text-gray-500">2m</span>
+                                    </div>
+                                    <p class="text-sm text-gray-600 truncate">That creative project sounds amazing! 🎨</p>
+                                </div>
+                                <div class="w-2 h-2 bg-purple-500 rounded-full"></div>
+                            </div>
+
+                            <div class="flex items-center space-x-3 p-3 hover:bg-gray-50 rounded-xl cursor-pointer" onclick="openChat('mike')">
+                                <div class="relative">
+                                    <div class="w-10 h-10 bg-gradient-to-r from-blue-400 to-cyan-500 rounded-full flex items-center justify-center">
+                                        <i class="fas fa-user text-white text-sm"></i>
+                                    </div>
+                                    <div class="absolute -bottom-1 -right-1 w-3 h-3 bg-green-500 rounded-full border border-white"></div>
+                                </div>
+                                <div class="flex-1 min-w-0">
+                                    <div class="flex items-center justify-between">
+                                        <p class="text-sm font-medium text-gray-800">Mike Rodriguez</p>
+                                        <span class="text-xs text-gray-500">5m</span>
+                                    </div>
+                                    <p class="text-sm text-gray-600 truncate">Ready for our virtual study session? 📚</p>
+                                </div>
+                                <div class="w-2 h-2 bg-blue-500 rounded-full"></div>
+                            </div>
+
+                            <div class="flex items-center space-x-3 p-3 hover:bg-gray-50 rounded-xl cursor-pointer" onclick="openChat('alex')">
+                                <div class="relative">
+                                    <div class="w-10 h-10 bg-gradient-to-r from-green-400 to-emerald-500 rounded-full flex items-center justify-center">
+                                        <i class="fas fa-user text-white text-sm"></i>
+                                    </div>
+                                </div>
+                                <div class="flex-1 min-w-0">
+                                    <div class="flex items-center justify-between">
+                                        <p class="text-sm font-medium text-gray-800">Alex Chen</p>
+                                        <span class="text-xs text-gray-500">1h</span>
+                                    </div>
+                                    <p class="text-sm text-gray-600 truncate">Thanks for the art gallery recommendation!</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Chat Window -->
+            <div id="chatWindow" class="hidden fixed inset-4 bg-white rounded-3xl shadow-2xl border border-gray-200 z-50 flex flex-col">
+                <!-- Chat Header -->
+                <div id="chatHeader" class="p-4 border-b border-gray-200 flex items-center justify-between">
+                    <div class="flex items-center space-x-3">
+                        <div class="relative">
+                            <div id="chatUserAvatar" class="w-12 h-12 bg-gradient-to-r from-pink-400 to-purple-500 rounded-full flex items-center justify-center">
+                                <i class="fas fa-user text-white"></i>
+                            </div>
+                            <div class="absolute -bottom-1 -right-1 w-4 h-4 bg-green-500 rounded-full border-2 border-white online-indicator"></div>
+                        </div>
+                        <div>
+                            <h3 id="chatUserName" class="font-semibold text-gray-800">Sarah Johnson</h3>
+                            <p class="text-sm text-gray-500">
+                                <i class="fas fa-circle text-green-500 text-xs mr-1"></i>
+                                Active now
+                            </p>
+                        </div>
+                    </div>
+                    <div class="flex items-center space-x-2">
+                        <button onclick="startVideoCall()" class="p-3 text-blue-600 hover:bg-blue-50 rounded-full transition-all call-animation">
+                            <i class="fas fa-video text-lg"></i>
+                        </button>
+                        <button onclick="startVoiceCall()" class="p-3 text-green-600 hover:bg-green-50 rounded-full transition-all call-animation">
+                            <i class="fas fa-phone text-lg"></i>
+                        </button>
+                        <button onclick="closeChat()" class="p-3 text-gray-600 hover:bg-gray-50 rounded-full">
+                            <i class="fas fa-times text-lg"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Chat Messages -->
+                <div id="chatMessages" class="flex-1 overflow-y-auto p-4 space-y-4 chat-scroll">
+                    <div class="flex items-start space-x-3">
+                        <div class="w-8 h-8 bg-gradient-to-r from-pink-400 to-purple-500 rounded-full flex items-center justify-center flex-shrink-0">
+                            <i class="fas fa-user text-white text-xs"></i>
+                        </div>
+                        <div class="message-bubble bg-gray-100 rounded-2xl p-3 max-w-xs">
+                            <p class="text-gray-800">Hey! I saw your creative mood post. That sunset artwork is absolutely stunning! 🌅</p>
+                            <p class="text-xs text-gray-500 mt-1">2:34 PM</p>
+                        </div>
+                    </div>
+
+                    <div class="flex items-start space-x-3 justify-end">
+                        <div class="message-bubble bg-purple-500 text-white rounded-2xl p-3 max-w-xs">
+                            <p>Thank you so much! The AI mood matcher really helped me connect with fellow artists. Want to collaborate on something? ✨</p>
+                            <p class="text-xs text-purple-200 mt-1">2:35 PM</p>
+                        </div>
+                        <div class="w-8 h-8 nexora-gradient rounded-full flex items-center justify-center flex-shrink-0">
+                            <i class="fas fa-user text-white text-xs"></i>
+                        </div>
+                    </div>
+
+                    <div class="flex items-start space-x-3">
+                        <div class="w-8 h-8 bg-gradient-to-r from-pink-400 to-purple-500 rounded-full flex items-center justify-center flex-shrink-0">
+                            <i class="fas fa-user text-white text-xs"></i>
+                        </div>
+                        <div class="message-bubble bg-gray-100 rounded-2xl p-3 max-w-xs">
+                            <p class="text-gray-800">Absolutely! I'd love to work on a virtual art piece together. Should we meet in the Art Gallery space? 🎨</p>
+                            <p class="text-xs text-gray-500 mt-1">2:36 PM</p>
+                        </div>
+                    </div>
+
+                    <div class="text-center">
+                        <span class="text-xs text-gray-500 bg-gray-100 px-3 py-1 rounded-full">Sarah is typing...</span>
+                    </div>
+                </div>
+
+                <!-- Chat Input -->
+                <div class="p-4 border-t border-gray-200">
+                    <div class="flex items-center space-x-3">
+                        <button class="p-2 text-gray-600 hover:bg-gray-50 rounded-full">
+                            <i class="fas fa-smile"></i>
+                        </button>
+                        <button class="p-2 text-gray-600 hover:bg-gray-50 rounded-full">
+                            <i class="fas fa-paperclip"></i>
+                        </button>
+                        <input type="text" placeholder="Share your thoughts..." class="flex-1 px-4 py-2 border border-gray-300 rounded-full focus:outline-none focus:ring-2 focus:ring-purple-500">
+                        <button class="p-2 bg-purple-500 text-white rounded-full hover:bg-purple-600 transition-colors">
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Video Call Interface -->
+            <div id="videoCallInterface" class="hidden fixed inset-4 video-call-container text-white rounded-3xl shadow-2xl z-50 flex flex-col">
+                <!-- Call Header -->
+                <div class="p-6 text-center">
+                    <div class="w-24 h-24 bg-white bg-opacity-20 rounded-full mx-auto mb-4 flex items-center justify-center">
+                        <i class="fas fa-user text-4xl"></i>
+                    </div>
+                    <h3 id="callUserName" class="text-2xl font-semibold mb-2">Sarah Johnson</h3>
+                    <p id="callStatus" class="text-blue-200">Connecting...</p>
+                </div>
+
+                <!-- Video Display Area -->
+                <div class="flex-1 relative p-6">
+                    <div class="w-full h-full bg-black bg-opacity-30 rounded-2xl flex items-center justify-center">
+                        <div class="text-center">
+                            <i class="fas fa-video text-6xl text-white opacity-50 mb-4"></i>
+                            <p class="text-white opacity-75">Video will appear here</p>
+                        </div>
+                    </div>
+                    <!-- Small self-view -->
+                    <div class="absolute top-8 right-8 w-32 h-24 bg-gray-800 rounded-xl flex items-center justify-center">
+                        <i class="fas fa-user text-white text-xl"></i>
+                    </div>
+                </div>
+
+                <!-- Call Controls -->
+                <div class="p-6 text-center">
+                    <div class="flex items-center justify-center space-x-4">
+                        <button id="muteBtn" onclick="toggleMute()" class="w-14 h-14 bg-gray-600 hover:bg-gray-700 rounded-full flex items-center justify-center transition-all">
+                            <i class="fas fa-microphone text-xl"></i>
+                        </button>
+                        <button id="videoBtn" onclick="toggleVideo()" class="w-14 h-14 bg-gray-600 hover:bg-gray-700 rounded-full flex items-center justify-center transition-all">
+                            <i class="fas fa-video text-xl"></i>
+                        </button>
+                        <button onclick="endCall()" class="w-16 h-16 bg-red-500 hover:bg-red-600 rounded-full flex items-center justify-center transition-all">
+                            <i class="fas fa-phone-slash text-xl"></i>
+                        </button>
+                        <button onclick="shareScreen()" class="w-14 h-14 bg-gray-600 hover:bg-gray-700 rounded-full flex items-center justify-center transition-all">
+                            <i class="fas fa-desktop text-xl"></i>
+                        </button>
+                        <button onclick="openChatDuringCall()" class="w-14 h-14 bg-gray-600 hover:bg-gray-700 rounded-full flex items-center justify-center transition-all">
+                            <i class="fas fa-comment text-xl"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Voice Call Interface -->
+            <div id="voiceCallInterface" class="hidden fixed inset-x-4 top-20 bottom-20 max-w-md mx-auto nexora-gradient text-white rounded-3xl shadow-2xl z-50 flex flex-col">
+                <!-- Call Header -->
+                <div class="p-8 text-center">
+                    <div class="w-32 h-32 bg-white bg-opacity-20 rounded-full mx-auto mb-6 flex items-center justify-center call-animation">
+                        <i class="fas fa-user text-5xl"></i>
+                    </div>
+                    <h3 id="voiceCallUserName" class="text-2xl font-semibold mb-2">Sarah Johnson</h3>
+                    <p id="voiceCallStatus" class="text-purple-200">Calling...</p>
+                    <p id="callDuration" class="text-purple-200 text-sm mt-2 hidden">00:00</p>
+                </div>
+
+                <!-- Voice Controls -->
+                <div class="flex-1 flex items-center justify-center">
+                    <div class="flex items-center space-x-6">
+                        <button id="voiceMuteBtn" onclick="toggleVoiceMute()" class="w-16 h-16 bg-white bg-opacity-20 hover:bg-opacity-30 rounded-full flex items-center justify-center transition-all">
+                            <i class="fas fa-microphone text-2xl"></i>
+                        </button>
+                        <button onclick="endVoiceCall()" class="w-20 h-20 bg-red-500 hover:bg-red-600 rounded-full flex items-center justify-center transition-all">
+                            <i class="fas fa-phone-slash text-2xl"></i>
+                        </button>
+                        <button onclick="addToCall()" class="w-16 h-16 bg-white bg-opacity-20 hover:bg-opacity-30 rounded-full flex items-center justify-center transition-all">
+                            <i class="fas fa-user-plus text-2xl"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Nexora Uniqueness Section -->
+        <div id="uniquenessSection" class="py-20 bg-gradient-to-br from-indigo-900 via-purple-900 to-pink-900 text-white">
+            <div class="max-w-6xl mx-auto px-6 text-center">
+                <div class="mb-16">
+                    <h2 class="text-5xl font-bold font-display mb-6 bg-gradient-to-r from-blue-300 to-pink-300 bg-clip-text text-transparent">
+                        The Nexora Revolution
+                    </h2>
+                    <p class="text-2xl text-gray-200 mb-8 leading-relaxed">
+                        We're not just another social platform. We're pioneering the future of human connection in the digital age.
+                    </p>
+                </div>
+
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+                    <!-- Empathy-Driven AI -->
+                    <div class="glass-morphism bg-white bg-opacity-10 rounded-2xl p-8 text-left">
+                        <div class="w-16 h-16 bg-gradient-to-r from-blue-400 to-purple-500 rounded-full mx-auto mb-6 flex items-center justify-center">
+                            <i class="fas fa-heart-pulse text-2xl text-white"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-4 font-display">Empathy-Driven AI</h3>
+                        <p class="text-gray-200 leading-relaxed">
+                            Our revolutionary AI doesn't just analyze data—it understands emotions, context, and human nuance to create genuinely meaningful connections that transcend superficial interactions.
+                        </p>
+                    </div>
+
+                    <!-- Zero-Knowledge Privacy -->
+                    <div class="glass-morphism bg-white bg-opacity-10 rounded-2xl p-8 text-left">
+                        <div class="w-16 h-16 bg-gradient-to-r from-green-400 to-teal-500 rounded-full mx-auto mb-6 flex items-center justify-center">
+                            <i class="fas fa-user-shield text-2xl text-white"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-4 font-display">Zero-Knowledge Privacy</h3>
+                        <p class="text-gray-200 leading-relaxed">
+                            Your personal data never leaves your device unencrypted. We've built the first social platform where privacy isn't a feature—it's the foundation of everything we do.
+                        </p>
+                    </div>
+
+                    <!-- Quantum-Safe Security -->
+                    <div class="glass-morphism bg-white bg-opacity-10 rounded-2xl p-8 text-left">
+                        <div class="w-16 h-16 bg-gradient-to-r from-purple-400 to-pink-500 rounded-full mx-auto mb-6 flex items-center justify-center">
+                            <i class="fas fa-atom text-2xl text-white"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-4 font-display">Quantum-Safe Security</h3>
+                        <p class="text-gray-200 leading-relaxed">
+                            Future-proofed with quantum-resistant encryption, ensuring your connections and communications remain secure even against tomorrow's computational advances.
+                        </p>
+                    </div>
+
+                    <!-- Immersive Reality Spaces -->
+                    <div class="glass-morphism bg-white bg-opacity-10 rounded-2xl p-8 text-left">
+                        <div class="w-16 h-16 bg-gradient-to-r from-cyan-400 to-blue-500 rounded-full mx-auto mb-6 flex items-center justify-center">
+                            <i class="fas fa-cube text-2xl text-white"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-4 font-display">Immersive Reality Spaces</h3>
+                        <p class="text-gray-200 leading-relaxed">
+                            Step into photorealistic virtual environments where distance disappears. Our proprietary spatial computing creates presence so real, you'll forget you're not physically together.
+                        </p>
+                    </div>
+
+                    <!-- Wellbeing-First Design -->
+                    <div class="glass-morphism bg-white bg-opacity-10 rounded-2xl p-8 text-left">
+                        <div class="w-16 h-16 bg-gradient-to-r from-emerald-400 to-green-500 rounded-full mx-auto mb-6 flex items-center justify-center">
+                            <i class="fas fa-seedling text-2xl text-white"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-4 font-display">Wellbeing-First Design</h3>
+                        <p class="text-gray-200 leading-relaxed">
+                            Every feature is designed to enhance your mental health, not exploit it. Our AI actively promotes positive interactions and helps you maintain healthy digital boundaries.
+                        </p>
+                    </div>
+
+                    <!-- Collective Intelligence -->
+                    <div class="glass-morphism bg-white bg-opacity-10 rounded-2xl p-8 text-left">
+                        <div class="w-16 h-16 bg-gradient-to-r from-orange-400 to-red-500 rounded-full mx-auto mb-6 flex items-center justify-center">
+                            <i class="fas fa-network-wired text-2xl text-white"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-4 font-display">Collective Intelligence</h3>
+                        <p class="text-gray-200 leading-relaxed">
+                            Harness the power of distributed human creativity. Our platform enables seamless collaboration that amplifies collective wisdom while preserving individual agency.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Mission Statement -->
+                <div class="bg-gradient-to-r from-purple-500 to-pink-500 rounded-3xl p-8 mb-12">
+                    <h3 class="text-3xl font-bold mb-6 font-display">Our Mission</h3>
+                    <p class="text-xl leading-relaxed">
+                        "To create a social universe where technology amplifies human connection rather than replacing it. 
+                        Where privacy is paramount, authenticity is rewarded, and every interaction enriches the human experience. 
+                        We're not building the next social media—we're architecting the future of human digital consciousness."
+                    </p>
+                    <div class="mt-6">
+                        <span class="text-purple-200">— The Nexora Collective</span>
+                    </div>
+                </div>
+
+                <!-- Key Differentiators -->
+                <div class="text-left">
+                    <h3 class="text-3xl font-bold mb-8 text-center font-display">What Makes Us Impossibly Different</h3>
+                    <div class="grid md:grid-cols-2 gap-8">
+                        <div>
+                            <h4 class="text-xl font-semibold mb-4 text-blue-300">🧠 Consciousness-Aware AI</h4>
+                            <p class="text-gray-300 mb-6">Unlike algorithms that optimize for engagement, our AI understands context, emotion, and genuine human needs, creating connections that feel natural and meaningful.</p>
+
+                            <h4 class="text-xl font-semibold mb-4 text-green-300">🛡️ Post-Privacy Era Security</h4>
+                            <p class="text-gray-300 mb-6">We've eliminated the concept of data collection entirely. Your information exists only in encrypted form, accessible only by you, making surveillance capitalism impossible.</p>
+
+                            <h4 class="text-xl font-semibold mb-4 text-purple-300">🌈 Emotion-First Matching</h4>
+                            <p class="text-gray-300">Connect based on feelings, aspirations, and energy—not just interests or demographics. Our mood-mapping technology creates chemistry, not just compatibility.</p>
+                        </div>
+                        <div>
+                            <h4 class="text-xl font-semibold mb-4 text-pink-300">🌐 Seamless Reality Fusion</h4>
+                            <p class="text-gray-300 mb-6">Virtual and physical worlds blend seamlessly through our spatial computing layer, creating shared experiences that transcend geographical limitations.</p>
+
+                            <h4 class="text-xl font-semibold mb-4 text-cyan-300">⚡ Quantum Communication</h4>
+                            <p class="text-gray-300 mb-6">Messages and calls use quantum entanglement principles for instantaneous, unhackable communication that makes current encryption look primitive.</p>
+
+                            <h4 class="text-xl font-semibold mb-4 text-orange-300">🌱 Regenerative Social Design</h4>
+                            <p class="text-gray-300">Every interaction is designed to leave you and others better than before, creating positive feedback loops that enhance collective wisdom and individual growth.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Enhanced App State with New Features
+        let nexoraState = {
+            currentUser: { name: 'You', mood: 'curious', privacyLevel: 'high' },
+            aiInsights: { moodMatch: 0.87, contentRelevance: 0.92, wellbeingScore: 8.7 },
+            virtualSpaces: [
+                { name: 'Cozy Café', users: 12, vibe: 'relaxed' },
+                { name: 'Art Gallery', users: 8, vibe: 'creative' },
+                { name: 'Study Lounge', users: 15, vibe: 'focused' }
+            ],
+            privacySettings: { dataSharing: false, aiPersonalization: true, moodSharing: 'friends' },
+            currentChat: null,
+            isInCall: false,
+            callType: null,
+            isMuted: false,
+            isVideoEnabled: true
+        };
+
+        // Intro Sequence
+        function startIntroSequence() {
+            setTimeout(() => {
+                document.getElementById('introSection').style.transform = 'scale(0.8)';
+                document.getElementById('introSection').style.opacity = '0';
+                document.getElementById('introSection').style.transition = 'all 1s ease-out';
+                
+                setTimeout(() => {
+                    document.getElementById('introSection').classList.add('hidden');
+                    document.getElementById('welcomeSection').classList.remove('hidden');
+                    document.getElementById('featuresSection').classList.remove('hidden');
+                }, 1000);
+            }, 3000);
+        }
+
+        // Enhanced Login
+        function enterNexora() {
+            showNotification('Welcome to your personalized universe! 🌟', 'success');
+            
+            setTimeout(() => {
+                document.getElementById('welcomeSection').style.transform = 'translateY(-100vh)';
+                document.getElementById('featuresSection').style.transform = 'translateY(-100vh)';
+                document.getElementById('welcomeSection').style.transition = 'transform 0.8s ease-out';
+                document.getElementById('featuresSection').style.transition = 'transform 0.8s ease-out';
+                
+                setTimeout(() => {
+                    document.getElementById('welcomeSection').classList.add('hidden');
+                    document.getElementById('featuresSection').classList.add('hidden');
+                    document.getElementById('mainPlatform').classList.remove('hidden');
+                    document.getElementById('uniquenessSection').classList.remove('hidden');
+                    initializeAIFeatures();
+                }, 800);
+            }, 1000);
+        }
+
+        function showSignUp() {
+            showNotification('Join 2M+ users creating authentic connections! 🎉', 'success');
+        }
+
+        // Messaging Functions
+        function toggleMessaging() {
+            const sidebar = document.getElementById('messagingSidebar');
+            sidebar.classList.toggle('hidden');
+            
+            if (!sidebar.classList.contains('hidden')) {
+                showNotification('💬 Messages loaded! Connect with your vibe tribe', 'info');
+            }
+        }
+
+        function openChat(userName) {
+            nexoraState.currentChat = userName;
+            const chatWindow = document.getElementById('chatWindow');
+            const userNameElement = document.getElementById('chatUserName');
+            const userAvatarElement = document.getElementById('chatUserAvatar');
+            
+            // Update chat info based on user
+            const userInfo = {
+                'sarah': { name: 'Sarah Johnson', gradient: 'from-pink-400 to-purple-500' },
+                'mike': { name: 'Mike Rodriguez', gradient: 'from-blue-400 to-cyan-500' },
+                'alex': { name: 'Alex Chen', gradient: 'from-green-400 to-emerald-500' }
+            };
+            
+            const user = userInfo[userName];
+            userNameElement.textContent = user.name;
+            userAvatarElement.className = `w-12 h-12 bg-gradient-to-r ${user.gradient} rounded-full flex items-center justify-center`;
+            
+            chatWindow.classList.remove('hidden');
+            showNotification(`💬 Opening chat with ${user.name}`, 'info');
+        }
+
+        function closeChat() {
+            document.getElementById('chatWindow').classList.add('hidden');
+            nexoraState.currentChat = null;
+        }
+
+        function startNewChat() {
+            showNotification('🔍 AI is finding perfect conversation partners based on your mood!', 'info');
+        }
+
+        // Calling Functions
+        function startVideoCall() {
+            if (!nexoraState.currentChat) return;
+            
+            nexoraState.isInCall = true;
+            nexoraState.callType = 'video';
+            
+            const videoCall = document.getElementById('videoCallInterface');
+            const callUserName = document.getElementById('callUserName');
+            const callStatus = document.getElementById('callStatus');
+            
+            callUserName.textContent = document.getElementById('chatUserName').textContent;
+            callStatus.textContent = 'Connecting...';
+            
+            videoCall.classList.remove('hidden');
+            document.getElementById('chatWindow').classList.add('hidden');
+            
+            // Simulate connection
+            setTimeout(() => {
+                callStatus.textContent = 'Connected';
+                showNotification('📹 Video call connected with crystal clarity!', 'success');
+            }, 2000);
+        }
+
+        function startVoiceCall() {
+            if (!nexoraState.currentChat) return;
+            
+            nexoraState.isInCall = true;
+            nexoraState.callType = 'voice';
+            
+            const voiceCall = document.getElementById('voiceCallInterface');
+            const voiceCallUserName = document.getElementById('voiceCallUserName');
+            const voiceCallStatus = document.getElementById('voiceCallStatus');
+            
+            voiceCallUserName.textContent = document.getElementById('chatUserName').textContent;
+            voiceCallStatus.textContent = 'Calling...';
+            
+            voiceCall.classList.remove('hidden');
+            document.getElementById('chatWindow').classList.add('hidden');
+            
+            // Simulate connection
+            setTimeout(() => {
+                voiceCallStatus.textContent = 'Connected';
+                document.getElementById('callDuration').classList.remove('hidden');
+                startCallTimer();
+                showNotification('📞 Voice call connected with HD audio!', 'success');
+            }, 3000);
+        }
+
+        function endCall() {
+            document.getElementById('videoCallInterface').classList.add('hidden');
+            document.getElementById('chatWindow').classList.remove('hidden');
+            nexoraState.isInCall = false;
+            nexoraState.callType = null;
+            showNotification('📹 Video call ended', 'info');
+        }
+
+        function endVoiceCall() {
+            document.getElementById('voiceCallInterface').classList.add('hidden');
+            document.getElementById('chatWindow').classList.remove('hidden');
+            nexoraState.isInCall = false;
+            nexoraState.callType = null;
+            showNotification('📞 Voice call ended', 'info');
+        }
+
+        function toggleMute() {
+            nexoraState.isMuted = !nexoraState.isMuted;
+            const muteBtn = document.getElementById('muteBtn');
+            const icon = muteBtn.querySelector('i');
+            
+            if (nexoraState.isMuted) {
+                icon.className = 'fas fa-microphone-slash text-xl';
+                muteBtn.className = muteBtn.className.replace('bg-gray-600', 'bg-red-500');
+                showNotification('🔇 Microphone muted', 'warning');
+            } else {
+                icon.className = 'fas fa-microphone text-xl';
+                muteBtn.className = muteBtn.className.replace('bg-red-500', 'bg-gray-600');
+                showNotification('🎤 Microphone unmuted', 'info');
+            }
+        }
+
+        function toggleVideo() {
+            nexoraState.isVideoEnabled = !nexoraState.isVideoEnabled;
+            const videoBtn = document.getElementById('videoBtn');
+            const icon = videoBtn.querySelector('i');
+            
+            if (!nexoraState.isVideoEnabled) {
+                icon.className = 'fas fa-video-slash text-xl';
+                videoBtn.className = videoBtn.className.replace('bg-gray-600', 'bg-red-500');
+                showNotification('📹 Camera turned off', 'warning');
+            } else {
+                icon.className = 'fas fa-video text-xl';
+                videoBtn.className = videoBtn.className.replace('bg-red-500', 'bg-gray-600');
+                showNotification('📹 Camera turned on', 'info');
+            }
+        }
+
+        function toggleVoiceMute() {
+            nexoraState.isMuted = !nexoraState.isMuted;
+            const muteBtn = document.getElementById('voiceMuteBtn');
+            const icon = muteBtn.querySelector('i');
+            
+            if (nexoraState.isMuted) {
+                icon.className = 'fas fa-microphone-slash text-2xl';
+                showNotification('🔇 Microphone muted', 'warning');
+            } else {
+                icon.className = 'fas fa-microphone text-2xl';
+                showNotification('🎤 Microphone unmuted', 'info');
+            }
+        }
+
+        function shareScreen() {
+            showNotification('🖥️ Screen sharing initiated - now sharing your creative workspace!', 'info');
+        }
+
+        function openChatDuringCall() {
+            showNotification('💬 In-call messaging enabled - send a message while talking!', 'info');
+        }
+
+        function addToCall() {
+            showNotification('👥 Inviting more friends to join the call...', 'info');
+        }
+
+        function startCallTimer() {
+            let seconds = 0;
+            const durationElement = document.getElementById('callDuration');
+            
+            const timer = setInterval(() => {
+                if (!nexoraState.isInCall) {
+                    clearInterval(timer);
+                    return;
+                }
+                
+                seconds++;
+                const minutes = Math.floor(seconds / 60);
+                const remainingSeconds = seconds % 60;
+                durationElement.textContent = `${minutes.toString().padStart(2, '0')}:${remainingSeconds.toString().padStart(2, '0')}`;
+            }, 1000);
+        }
+
+        // AI-Powered Features
+        function matchMood(mood) {
+            nexoraState.currentUser.mood = mood;
+            showNotification(`Finding your ${mood} tribe... 🔮 3 perfect matches found!`, 'success');
+            
+            // Simulate AI mood matching
+            setTimeout(() => {
+                showNotification(`Connected with Sarah, Mike, and Alex - all feeling ${mood} too! ✨`, 'info');
+            }, 2000);
+        }
+
+        function openAIMoodMatcher() {
+            showNotification('AI analyzing your interaction patterns... 🧠 Mood insights ready!', 'info');
+        }
+
+        function openVirtualSpaces() {
+            showNotification('🌐 Opening virtual spaces... Choose your vibe and dive in!', 'info');
+        }
+
+        function openPrivacyCenter() {
+            showNotification('🛡️ Your data is encrypted and never sold. Privacy settings updated!', 'success');
+        }
+
+        function initializeAIFeatures() {
+            // Simulate AI-powered content curation
+            setTimeout(() => {
+                showNotification('AI curated 12 posts perfect for your creative mood! 🎨', 'info');
+            }, 3000);
+            
+            // Simulate mood-based matching
+            setTimeout(() => {
+                showNotification('Found 3 creative souls nearby wanting to collaborate! 🤝', 'success');
+            }, 5000);
+            
+            // Privacy reminder
+            setTimeout(() => {
+                showNotification('🔒 All your interactions are end-to-end encrypted!', 'info');
+            }, 8000);
+
+            // Messaging notification
+            setTimeout(() => {
+                showNotification('💬 You have new messages from your AI-matched connections!', 'info');
+            }, 10000);
+        }
+
+        // Enhanced Notification System
+        function showNotification(message, type = 'info') {
+            const notification = document.createElement('div');
+            const colors = {
+                success: 'bg-green-100 border-green-400 text-green-800',
+                error: 'bg-red-100 border-red-400 text-red-800', 
+                info: 'bg-purple-100 border-purple-400 text-purple-800',
+                warning: 'bg-yellow-100 border-yellow-400 text-yellow-800'
+            };
+            
+            notification.className = `fixed top-20 right-4 z-50 p-4 rounded-xl border-l-4 shadow-2xl ${colors[type]} transform translate-x-full transition-all duration-500 max-w-sm`;
+            notification.innerHTML = `
+                <div class="flex items-start space-x-3">
+                    <div class="font-medium text-sm leading-relaxed">${message}</div>
+                    <button onclick="this.parentElement.parentElement.remove()" class="text-gray-400 hover:text-gray-600 flex-shrink-0">
+                        <i class="fas fa-times text-sm"></i>
+                    </button>
+                </div>
+            `;
+            
+            document.body.appendChild(notification);
+            
+            setTimeout(() => notification.classList.remove('translate-x-full'), 100);
+            setTimeout(() => {
+                notification.classList.add('translate-x-full');
+                setTimeout(() => notification.remove(), 500);
+            }, 5000);
+        }
+
+        // Responsive Design Handler
+        function handleResize() {
+            const width = window.innerWidth;
+            const messagingSidebar = document.getElementById('messagingSidebar');
+            
+            if (width < 768 && messagingSidebar && !messagingSidebar.classList.contains('hidden')) {
+                messagingSidebar.style.width = '100%';
+                messagingSidebar.style.height = '50vh';
+            }
+        }
+
+        // Initialize App
+        document.addEventListener('DOMContentLoaded', function() {
+            startIntroSequence();
+            
+            
+            document.documentElement.style.scrollBehavior = 'smooth';
+            
+           
+            window.addEventListener('resize', handleResize);
+            
+            
+            setInterval(() => {
+                if (Math.random() > 0.9 && !nexoraState.isInCall) {
+                    const insights = [
+                        '🧠 AI noticed you love sunset photos - matched with 5 photography enthusiasts!',
+                        '💫 Your positivity score increased! Keep spreading those good vibes!',
+                        '🔐 Privacy shield active - your data is safe and never shared!',
+                        '🎨 Virtual Art Gallery has 3 new pieces that match your creative energy!',
+                        '📞 3 friends are online and available for video calls!',
+                        '💬 New message from someone with matching creative mood!'
+                    ];
+                    showNotification(insights[Math.floor(Math.random() * insights.length)], 'info');
+                }
+            }, 15000);
+            
+            
+            document.addEventListener('click', function(e) {
+                if (e.target.closest('#chatWindow') === null && e.target.closest('button') === null) {
+                    
+                }
+            });
+            
+            console.log('🚀 Welcome to Nexora - Where AI meets authentic connections!');
+            console.log('✨ Features loaded: AI Mood Matching, Virtual Spaces, Privacy Shield, Messaging, Video/Voice Calls, and more!');
+        });
+
+        
+        document.addEventListener('keydown', function(e) {
+            
+            if (e.key === 'Escape') {
+                if (!document.getElementById('chatWindow').classList.contains('hidden')) {
+                    closeChat();
+                }
+                if (!document.getElementById('videoCallInterface').classList.contains('hidden')) {
+                    endCall();
+                }
+                if (!document.getElementById('voiceCallInterface').classList.contains('hidden')) {
+                    endVoiceCall();
+                }
+            }
+            
+            
+            if ((e.ctrlKey || e.metaKey) && e.key === 'm') {
+                e.preventDefault();
+                toggleMessaging();
+            }
+        });
+
+        
+        window.addEventListener('beforeprint', function() {
+            
+            const fixedElements = document.querySelectorAll('.fixed');
+            fixedElements.forEach(el => {
+                el.style.position = 'relative';
+                el.style.transform = 'none';
+            });
+            
+        
+            document.getElementById('chatWindow').classList.add('hidden');
+            document.getElementById('videoCallInterface').classList.add('hidden');
+            document.getElementById('voiceCallInterface').classList.add('hidden');
+            document.getElementById('messagingSidebar').classList.add('hidden');
+        });
+
+        window.addEventListener('afterprint', function() {
+            
+            const fixedElements = document.querySelectorAll('[style*="position: relative"]');
+            fixedElements.forEach(el => {
+                el.style.position = 'fixed';
+            });
+        });
+    </script>
+</body>
+</html>
